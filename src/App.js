@@ -1,39 +1,17 @@
-import {useState } from 'react';
 import './App.css';
 import InputSample from './comonents/InputSample';
 import ListsSample from './comonents/ListsSample';
 import TextSample from './comonents/TextSample';
+import useLists from './hooks/useLists';
 
-function App() {
-  const [lists, setLists] = useState([]);
-  const addLists = (name, nickname) => {
-    setLists([
-      ...lists,
-      {name: name, nickname: nickname, isToggle: false},
-    ])
-    console.log(lists);
-  }
-  const delList = (delindex) => {
-    const newList = lists.filter((li, index) => {
-      if(index !== delindex) {
-        return li
-      }
-    })
-    setLists(newList);
-  }
-  const ToggleList = (toggleindex) => {
-    const newList = lists.map((li, index) => index === toggleindex ? {
-      ...li,
-      isToggle: !li.isToggle
-    } : li);
-    setLists(newList);
-  }
+function App() { 
+  const [state, addLists, delList, ToggleList] = useLists();
   return (
     <div className="App">
      <InputSample title='green' addLists={addLists}>
       <TextSample/> 
      </InputSample>
-     <ListsSample lists={lists} delList={delList} ToggleList={ToggleList}/>
+     <ListsSample lists={state} delList={delList} ToggleList={ToggleList}/>
     </div>
   );
 }
