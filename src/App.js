@@ -1,17 +1,25 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import InputSample from './comonents/InputSample';
-import ListsSample from './comonents/ListsSample';
-import TextSample from './comonents/TextSample';
-import useLists from './hooks/useLists';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import SpDetailContainer from './containers/SpDetailContainer';
+import SpecialContainer from './containers/SpecialContainer';
+import Main from './pages/Main';
+import JoinPage from './pages/member/JoinPage';
+import Login from './pages/member/Login';
 
 function App() { 
-  const [state, addLists, delList, ToggleList] = useLists();
   return (
     <div className="App">
-     <InputSample title='green' addLists={addLists}>
-      <TextSample/> 
-     </InputSample>
-     <ListsSample lists={state} delList={delList} ToggleList={ToggleList}/>
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Main/>}/>
+        <Route path='/special' element={<SpecialContainer isMain={false}/>}/>
+        <Route path='/special/:no' element={<SpDetailContainer/>}/>
+        <Route path='/join' element={<JoinPage/>}/>
+        <Route path='/login' element={<Login/>}/>
+      </Routes>
+      <Footer/>
     </div>
   );
 }

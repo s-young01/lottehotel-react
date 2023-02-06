@@ -1,0 +1,58 @@
+header {
+    display: flex;
+    height: 90px;
+    padding: 0 30px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+header * {
+    vertical-align: middle;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header ul {
+    display: flex;
+}
+header ul li {
+    padding: 0 30px;
+}
+.menu {
+    font-size: 16px;
+}
+.menu li {
+    transition: 0.5s;
+    cursor: pointer;
+}
+.menu li:hover {
+    color: black;
+}
+.iconDiv {
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid #ccc;
+    padding: 6px 20px;
+    line-height: 1;
+    transition: 0.5s;
+    position: absolute;
+    top: 16px;
+    right: 30px;
+    height: 50px;
+    overflow: hidden;
+    z-index: 5;
+}
+.membermenu {
+    flex-direction: column;
+    font-size: 14px;
+    padding-top: 10px;
+}
+.membermenu li {
+    padding: 0;
+    line-height: 20px;
+}
+.iconDiv:hover {
+    background-color: #333;
+    color: #fff;
+    height: 100px;
+}
