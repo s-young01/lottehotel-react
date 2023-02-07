@@ -55,7 +55,7 @@ const Login = () => {
         <div className='inner' id='login'>
             <Title title='Login'/>
             <form onSubmit={onSubmit}>
-                <table>
+                <table className='defaulttable small'>
                     <tbody>
                         <tr>
                             <td>아이디 (이메일 주소)</td>
@@ -75,6 +75,13 @@ const Login = () => {
                             <td colSpan={2}>
                                 <button type='submit'>로그인</button>
                                 <button><Link to='/join'>회원가입</Link></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colSpan={2}>
+                                <span><Link to='/findid'>아이디 찾기</Link></span> 
+                                <span>|</span>
+                                <span><Link to='/findpass'>비밀번호 찾기</Link></span>
                             </td>
                         </tr>
                     </tbody>

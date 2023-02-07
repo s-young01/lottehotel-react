@@ -5,8 +5,11 @@ import Header from './components/Header';
 import SpDetailContainer from './containers/SpDetailContainer';
 import SpecialContainer from './containers/SpecialContainer';
 import Main from './pages/Main';
+import EditPass from './pages/member/EditPass';
+import IdFind from './pages/member/IdFind';
 import JoinPage from './pages/member/JoinPage';
 import Login from './pages/member/Login';
+import PassFind from './pages/member/PassFind';
 
 function App() { 
   return (
@@ -18,6 +21,9 @@ function App() {
         <Route path='/special/:no' element={<SpDetailContainer/>}/>
         <Route path='/join' element={<JoinPage/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/findid' element={<IdFind/>}/>
+        <Route path='/findpass' element={<PassFind/>}/>
+        <Route path='/updatepass' element={<EditPass/>}/>
       </Routes>
       <Footer/>
     </div>

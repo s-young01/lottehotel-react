@@ -38,3 +38,7 @@ button {
 .defaulttable td {
     border-bottom: 1px solid #eee;
 }
+.small {
+    max-width: 700px;
+    margin: 0 auto;
+}
