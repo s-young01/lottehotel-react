@@ -35,7 +35,7 @@ const contentStyle = {
   
 const VisualSlider = () => {
     const onChange = (currentSlide) => {
-        console.log(currentSlide);
+        // console.log(currentSlide);
       };
     return (
         <div>

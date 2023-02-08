@@ -10,6 +10,7 @@ import IdFind from './pages/member/IdFind';
 import JoinPage from './pages/member/JoinPage';
 import Login from './pages/member/Login';
 import PassFind from './pages/member/PassFind';
+import WriteEvent from './pages/WriteEvent';
 
 function App() { 
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/findid' element={<IdFind/>}/>
         <Route path='/findpass' element={<PassFind/>}/>
         <Route path='/updatepass' element={<EditPass/>}/>
+        <Route path='/updateEvent' element={<WriteEvent/>}/>
       </Routes>
       <Footer/>
     </div>

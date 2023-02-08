@@ -28,7 +28,7 @@ const Header = () => {
                 <li>객실안내</li>
                 <li>객실예약</li>
                 <li>이용안내</li>
-                {isLogin && username === 'admin' ? <li><Link to='/update'>이벤트 등록</Link></li> : null}
+                {isLogin && username === 'admin' ? <li><Link to='/updateEvent'>이벤트 등록</Link></li> : null}
             </ul>
             <div>
                 <div className='iconDiv'>
