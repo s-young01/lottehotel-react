@@ -25,10 +25,11 @@ const Header = () => {
             <h1><Link to='/'><img src='/images/main_logo.png' alt=''/></Link></h1>
             <ul className='menu'>
                 <li><Link to='/special'>스페셜 오퍼</Link></li>
-                <li>객실안내</li>
+                <li><Link to='/room'>객실안내</Link></li>
                 <li>객실예약</li>
                 <li>이용안내</li>
-                {isLogin && username === 'admin' ? <li><Link to='/updateEvent'>이벤트 등록</Link></li> : null}
+                {isLogin && username === 'admin' ? <><li><Link to='/updateEvent'>이벤트 등록</Link></li>
+                <li><Link to='/updateRoom'>룸 등록</Link></li></> : null}
             </ul>
             <div>
                 <div className='iconDiv'>

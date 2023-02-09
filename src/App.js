@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import RoomContainer from './containers/RoomContainer';
 import SpDetailContainer from './containers/SpDetailContainer';
 import SpecialContainer from './containers/SpecialContainer';
 import Main from './pages/Main';
@@ -11,6 +12,7 @@ import JoinPage from './pages/member/JoinPage';
 import Login from './pages/member/Login';
 import PassFind from './pages/member/PassFind';
 import WriteEvent from './pages/WriteEvent';
+import WriteRoom from './pages/WriteRoom';
 
 function App() { 
   return (
@@ -18,7 +20,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Main/>}/>
-        <Route path='/special' element={<SpecialContainer isMain={false}/>}/>
+        <Route path='/special' element={<SpecialContainer isMain={false} limits={10}/>}/>
         <Route path='/special/:no' element={<SpDetailContainer/>}/>
         <Route path='/join' element={<JoinPage/>}/>
         <Route path='/login' element={<Login/>}/>
@@ -26,6 +28,8 @@ function App() {
         <Route path='/findpass' element={<PassFind/>}/>
         <Route path='/updatepass' element={<EditPass/>}/>
         <Route path='/updateEvent' element={<WriteEvent/>}/>
+        <Route path='/updateRoom' element={<WriteRoom/>}/>
+        <Route path='/room' element={<RoomContainer/>}/>
       </Routes>
       <Footer/>
     </div>

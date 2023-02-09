@@ -29,11 +29,11 @@ const initialState = {
 
 // redux-middleware thunk함수 생성
 // thunk 함수를 사용해서 action객체를 dispatch하기
-export const getDatas = () => async dispatch => {
+export const getDatas = (callback) => async dispatch => {
     dispatch({type: GET_DATAS}) // 요청 시작
     // 에러 핸들링
     try{
-        const response = await axios.get(`${API_URL}/special`);
+        const response = await callback();
         const data = response.data;
         dispatch({type: GET_DATAS_SUCSESS, data: data});
     }

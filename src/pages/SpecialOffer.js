@@ -7,7 +7,7 @@ function SpecialList({list}) {
     return (
         <li>
             <div className='imgdiv'>
-                <img src={`${API_URL}/${list.e_img1}`} alt=''/>
+                <img src={`${API_URL}/upload/event/${list.e_img1}`} alt=''/>
             </div>
             <div className='textdiv'>
                 <h3>{list.e_title}</h3>
