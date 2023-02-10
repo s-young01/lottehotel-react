@@ -1,6 +1,3 @@
-import axios from "axios";
-import { API_URL } from "../config/apiurl";
-
 // 액션 타입
 // 1. 여러 개의 데이터를 받아왔을 때
 const GET_DATAS = 'special/GET_DATAS';
@@ -41,11 +38,11 @@ export const getDatas = (callback) => async dispatch => {
         dispatch({type: GET_DATAS_ERROR, error: e});
     }
 }
-export const getData = no => async dispatch => {
+export const getData = callback => async dispatch => {
     dispatch({type: GET_DATA}) // 요청 시작
     // 에러 핸들링
     try{
-        const response = await axios.get(`${API_URL}/special/${no}`);
+        const response = await callback();
         const data = response.data;
         dispatch({type: GET_DATA_SUCSESS, data: data});
     }

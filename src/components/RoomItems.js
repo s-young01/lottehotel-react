@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { API_URL } from '../config/apiurl';
 import './RoomItems.css';
 
 const RoomItems = ({item}) => {
+    const price = Number(item.r_price).toLocaleString('ko-KR');
     return (
         <li className='roomitem'>
             <div>
@@ -14,11 +16,11 @@ const RoomItems = ({item}) => {
             </div>
             <div>
                 <div className='price'>
-                    {item.r_price}<br/><span>원 / 1박</span>
+                    {price}<br/><span>원 / 1박</span>
                 </div>
                 <div>
-                    <button>객실 상세보기</button>
-                    <button>예약하기</button>
+                    <button><Link to={`/roomdetail/${item.r_no}`}>객실 상세보기</Link></button>
+                    <button><Link to='/reservation'></Link>예약하기</button>
                 </div>
             </div>
         </li>

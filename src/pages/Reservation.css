@@ -1,0 +1,27 @@
+.reservationch {
+    border: 1px solid #333;
+    display: flex;
+    padding: 20px 0;
+    text-align: center;
+}
+.reservationch > li:nth-child(1) {
+    width: 46%;
+    display: flex;
+    position: relative;
+}
+.reservationch > li:not(:nth-child(1)) {
+    width: 18%;
+}
+.reservationch > li > div {
+    width: 100%;
+    border-right: 1px solid #ddd;
+}
+.reservationch > li > div > span {
+    display: block;
+}
+.reservationch > li > div.checkdate {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    border-right: none;
+}
